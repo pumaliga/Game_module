@@ -1,6 +1,7 @@
 import models
 import exceptions
-import settings
+import settings 
+# комментарий 
 
 
 player_name = ''
