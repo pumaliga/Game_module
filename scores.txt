@@ -1,0 +1,3 @@
+Name: sanya, Scores: 15
+Name: sanya, Scores: 10
+Name: sanya, Scores: 5
