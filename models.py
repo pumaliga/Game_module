@@ -3,7 +3,6 @@ import exceptions
 
 
 class Enemy:
-
     def __init__(self, level):
         self.level = level
         self.lives = level
@@ -19,7 +18,6 @@ class Enemy:
 
 
 class Player:
-
     score = 0
 
     def __init__(self, name, lives):
@@ -29,7 +27,6 @@ class Player:
     def decrease_lives(self):
         self.lives -= 1
         if self.lives == 0:
-            print('Your scores: {}'.format(self.score))
             raise exceptions.GameOver
 
     @staticmethod
@@ -50,7 +47,7 @@ class Player:
         elif fight_play == 1:
             print("You attacked successfully!")
             enemy_obj.decrease_lives()
-            self.score += 1
+
         elif fight_play == -1:
             print("You missed!")
 

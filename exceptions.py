@@ -1,13 +1,9 @@
 class GameOver(Exception):
 
-    # @staticmethod
-    # def save_score(name, score):
-    #     file = open('score.txt', 'a')
-    #     file.write(f'Name: {name}, Score: {score}\n')
-    #     file.close()
-
-    def __str__(self):
-        print('Game Over')
+    @staticmethod
+    def save_score(name, scores):
+        with open('scores.txt', 'a') as save_score:
+            save_score.write(f"Name: {name}, Scores: {scores}\n")
 
 
 class EnemyDown(Exception):
@@ -17,11 +13,13 @@ class EnemyDown(Exception):
 class Score:
 
     def __init__(self):
-        with open('score.txt') as file:
+        with open('scores.txt') as file:
             lines = [line.split('Scores: ') for line in file]
+            result = open("scores.txt", 'w')
 
-        # for line in file(lines, key=lambda x: int(x[1]), reverse=True)[:10]:
-        #     output.write('Scores: '.join(line))
+            for line in sorted(lines, key=lambda x: int(x[1]), reverse=True)[:10]:
+                result.write('Scores: '.join(line))
+
 
 class Exit(Exception):
     pass
