@@ -1,6 +1,8 @@
 import models
 import exceptions
 from settings import PLAYER_LIVES, show_command
+
+
 PLAYER_NAME = ''
 SCORES = 0
 
